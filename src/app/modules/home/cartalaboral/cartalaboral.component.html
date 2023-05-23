@@ -1,0 +1,33 @@
+<div
+  class="mx-10 relative overflow-x-auto shadow-md sm:rounded-lg py-4"
+  id="asDiv"
+>
+  <div>
+    <img
+      class="w-32 mx-auto"
+      src="../../../../assets/logo.png"
+      alt=""
+      srcset=""
+    />
+  </div>
+
+  <div class="container" *ngIf="$vendedor">
+    <h1>Papelera Universal fecha: {{ date | date : "short" }}</h1>
+    <p>Cordial saludo</p>
+
+    <p>
+      La papeleria universal certifica que {{ $vendedor.descripcion }},
+      identificado con cedula {{ $vendedor.cedula }}, cargo
+      {{ $vendedor.clase_desc_vend }}
+    </p>
+  </div>
+</div>
+
+<div>
+  <button
+    class="btn col col-lg-4 btn-danger btn-block ml-4"
+    (click)="onDownloadPDF()"
+  >
+    Download PDF
+  </button>
+</div>
